@@ -1,9 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
-VisualStudioVersion = 16.0.29519.87
+VisualStudioVersion = 16.0.30225.117
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FashionShopApi", "FashionShopApi\FashionShopApi.csproj", "{B12C1825-9708-4B9D-8B8E-14F83E1CC0E8}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FashionShopAPI", "FashionShopAPI\FashionShopAPI.csproj", "{8A653B55-12B6-4086-985E-B5EEBBDA74ED}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,15 +11,15 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{B12C1825-9708-4B9D-8B8E-14F83E1CC0E8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{B12C1825-9708-4B9D-8B8E-14F83E1CC0E8}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{B12C1825-9708-4B9D-8B8E-14F83E1CC0E8}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{B12C1825-9708-4B9D-8B8E-14F83E1CC0E8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8A653B55-12B6-4086-985E-B5EEBBDA74ED}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8A653B55-12B6-4086-985E-B5EEBBDA74ED}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8A653B55-12B6-4086-985E-B5EEBBDA74ED}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8A653B55-12B6-4086-985E-B5EEBBDA74ED}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {B578FF09-01B2-4CEA-946B-23CADF7B582F}
+		SolutionGuid = {87E6E6F0-0394-4661-AF7D-05E3BCFECA27}
 	EndGlobalSection
 EndGlobal
