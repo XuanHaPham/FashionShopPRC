@@ -10,6 +10,7 @@ namespace FashionShopAPI
     {
         public static void Register(HttpConfiguration config)
         {
+            config.EnableCors();
             // Web API configuration and services
 
             // Web API routes
@@ -20,8 +21,7 @@ namespace FashionShopAPI
                 routeTemplate: "api/{controller}/{id}",
                 defaults: new { id = RouteParameter.Optional }
             );
-            config.SetCorsPolicyProviderFactory(new CorsPolicyFactory());
-            config.EnableCors();
+            //config.SetCorsPolicyProviderFactory(new CorsPolicyFactory());
         }
     }
 }

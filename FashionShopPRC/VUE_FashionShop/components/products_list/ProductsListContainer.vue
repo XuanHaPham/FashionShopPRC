@@ -14,6 +14,7 @@
 import VmProducts from '../Products';
 import { getByTitle, getByCategory } from '@/assets/filters';
 import { base, openapi, methods, routes, setToken, requestToken } from '@/store/index.js'
+import axios from 'axios';
 
 export default {
   name: 'productsList',
@@ -28,10 +29,15 @@ export default {
     };
   },
   mounted(){
-    openapi(methods.GET, routes.GETPRODUCTS).then(data => {
-        console.log(data);
-        this.$store.commit('setProducts', data);
-      })
+    // openapi(methods.GET, routes.GETPRODUCTS).then(data => {
+    //     console.log(data);
+    //     this.$store.commit('setProducts', data);
+    //   })
+    axios.get('https://localhost:44395/products/getAllProduct')
+      .then((response) => {
+        console.log(response);
+        this.$store.commit('setProducts', response.data);
+      });
   },
   computed: {
     products () {

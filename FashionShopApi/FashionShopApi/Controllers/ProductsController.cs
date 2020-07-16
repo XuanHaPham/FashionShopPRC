@@ -14,7 +14,7 @@ using FashionShopAPI.Models;
 
 namespace FashionShopAPI.Controllers
 {
-    [EnableCors(origins: "*", headers: "*", methods: "*", exposedHeaders: "X-Custom-Header")]
+    [EnableCors(origins: "*", headers: "*", methods: "*")]
     public class ProductsController : ApiController
     {
         private Model1 db = new Model1();
