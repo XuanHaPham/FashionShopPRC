@@ -24,7 +24,7 @@ namespace FashionShopAPI.Controllers
 
         // GET: api/Accounts/5
         [ResponseType(typeof(Account))]
-        public IHttpActionResult GetAccount(int id)
+        public IHttpActionResult GetAccount(Guid id)
         {
             Account account = db.Accounts.Find(id);
             if (account == null)
@@ -37,7 +37,7 @@ namespace FashionShopAPI.Controllers
 
         // PUT: api/Accounts/5
         [ResponseType(typeof(void))]
-        public IHttpActionResult PutAccount(int id, Account account)
+        public IHttpActionResult PutAccount(Guid id, Account account)
         {
             if (!ModelState.IsValid)
             {
@@ -87,7 +87,7 @@ namespace FashionShopAPI.Controllers
 
         // DELETE: api/Accounts/5
         [ResponseType(typeof(Account))]
-        public IHttpActionResult DeleteAccount(int id)
+        public IHttpActionResult DeleteAccount(Guid id)
         {
             Account account = db.Accounts.Find(id);
             if (account == null)
@@ -110,7 +110,7 @@ namespace FashionShopAPI.Controllers
             base.Dispose(disposing);
         }
 
-        private bool AccountExists(int id)
+        private bool AccountExists(Guid id)
         {
             return db.Accounts.Count(e => e.Id == id) > 0;
         }

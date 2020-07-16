@@ -24,7 +24,7 @@ namespace FashionShopAPI.Controllers
 
         // GET: api/Feedbacks/5
         [ResponseType(typeof(Feedback))]
-        public IHttpActionResult GetFeedback(int id)
+        public IHttpActionResult GetFeedback(Guid id)
         {
             Feedback feedback = db.Feedbacks.Find(id);
             if (feedback == null)
@@ -37,7 +37,7 @@ namespace FashionShopAPI.Controllers
 
         // PUT: api/Feedbacks/5
         [ResponseType(typeof(void))]
-        public IHttpActionResult PutFeedback(int id, Feedback feedback)
+        public IHttpActionResult PutFeedback(Guid id, Feedback feedback)
         {
             if (!ModelState.IsValid)
             {
@@ -87,7 +87,7 @@ namespace FashionShopAPI.Controllers
 
         // DELETE: api/Feedbacks/5
         [ResponseType(typeof(Feedback))]
-        public IHttpActionResult DeleteFeedback(int id)
+        public IHttpActionResult DeleteFeedback(Guid id)
         {
             Feedback feedback = db.Feedbacks.Find(id);
             if (feedback == null)
@@ -110,7 +110,7 @@ namespace FashionShopAPI.Controllers
             base.Dispose(disposing);
         }
 
-        private bool FeedbackExists(int id)
+        private bool FeedbackExists(Guid id)
         {
             return db.Feedbacks.Count(e => e.Id == id) > 0;
         }

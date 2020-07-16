@@ -24,7 +24,7 @@ namespace FashionShopAPI.Controllers
 
         // GET: api/Promotions/5
         [ResponseType(typeof(Promotion))]
-        public IHttpActionResult GetPromotion(int id)
+        public IHttpActionResult GetPromotion(Guid id)
         {
             Promotion promotion = db.Promotions.Find(id);
             if (promotion == null)
@@ -37,7 +37,7 @@ namespace FashionShopAPI.Controllers
 
         // PUT: api/Promotions/5
         [ResponseType(typeof(void))]
-        public IHttpActionResult PutPromotion(int id, Promotion promotion)
+        public IHttpActionResult PutPromotion(Guid id, Promotion promotion)
         {
             if (!ModelState.IsValid)
             {
@@ -87,7 +87,7 @@ namespace FashionShopAPI.Controllers
 
         // DELETE: api/Promotions/5
         [ResponseType(typeof(Promotion))]
-        public IHttpActionResult DeletePromotion(int id)
+        public IHttpActionResult DeletePromotion(Guid id)
         {
             Promotion promotion = db.Promotions.Find(id);
             if (promotion == null)
@@ -110,7 +110,7 @@ namespace FashionShopAPI.Controllers
             base.Dispose(disposing);
         }
 
-        private bool PromotionExists(int id)
+        private bool PromotionExists(Guid id)
         {
             return db.Promotions.Count(e => e.Id == id) > 0;
         }

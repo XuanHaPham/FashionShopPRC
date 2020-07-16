@@ -389,7 +389,7 @@ export const actions = {
   }
 } */
 
-export const base = 'http://localhost:8080'
+export const base = 'https://localhost:44395'
 
 export const methods = {
     GET: 'GET',

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using FashionShopAPI.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -13,6 +14,14 @@ namespace FashionShopAPI.DTO
         public string Reviews { get; set; }
         public string Overview { get; set; }
 
+        public ProductDTO(Product product)
+        {
+            Id = product.Id;
+            Title = product.Name;
+            Rating = 0;
+            Reviews = product.Overview;
+            Overview = product.Overview;
+        }
     }
 }
 

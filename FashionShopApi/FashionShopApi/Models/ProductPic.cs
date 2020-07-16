@@ -9,11 +9,11 @@ namespace FashionShopAPI.Models
     [Table("ProductPic")]
     public partial class ProductPic
     {
-        public int Id { get; set; }
+        public Guid Id { get; set; }
 
         public string ImageURL { get; set; }
 
-        public int? ProductID { get; set; }
+        public Guid? ProductID { get; set; }
 
         public bool? Status { get; set; }
 

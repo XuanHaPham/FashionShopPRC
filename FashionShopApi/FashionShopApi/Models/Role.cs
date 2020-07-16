@@ -15,7 +15,7 @@ namespace FashionShopAPI.Models
             AccountRoles = new HashSet<AccountRole>();
         }
 
-        public int Id { get; set; }
+        public Guid Id { get; set; }
 
         public string Name { get; set; }
 

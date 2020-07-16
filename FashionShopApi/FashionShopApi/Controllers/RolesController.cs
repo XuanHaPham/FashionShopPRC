@@ -24,7 +24,7 @@ namespace FashionShopAPI.Controllers
 
         // GET: api/Roles/5
         [ResponseType(typeof(Role))]
-        public IHttpActionResult GetRole(int id)
+        public IHttpActionResult GetRole(Guid id)
         {
             Role role = db.Roles.Find(id);
             if (role == null)
@@ -37,7 +37,7 @@ namespace FashionShopAPI.Controllers
 
         // PUT: api/Roles/5
         [ResponseType(typeof(void))]
-        public IHttpActionResult PutRole(int id, Role role)
+        public IHttpActionResult PutRole(Guid id, Role role)
         {
             if (!ModelState.IsValid)
             {
@@ -87,7 +87,7 @@ namespace FashionShopAPI.Controllers
 
         // DELETE: api/Roles/5
         [ResponseType(typeof(Role))]
-        public IHttpActionResult DeleteRole(int id)
+        public IHttpActionResult DeleteRole(Guid id)
         {
             Role role = db.Roles.Find(id);
             if (role == null)
@@ -110,7 +110,7 @@ namespace FashionShopAPI.Controllers
             base.Dispose(disposing);
         }
 
-        private bool RoleExists(int id)
+        private bool RoleExists(Guid id)
         {
             return db.Roles.Count(e => e.Id == id) > 0;
         }

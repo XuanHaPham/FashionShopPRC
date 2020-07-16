@@ -9,11 +9,11 @@ namespace FashionShopAPI.Models
     [Table("WishList")]
     public partial class WishList
     {
-        public int Id { get; set; }
+        public Guid Id { get; set; }
 
-        public int? ProductID { get; set; }
+        public Guid? ProductID { get; set; }
 
-        public int? AccountID { get; set; }
+        public Guid? AccountID { get; set; }
 
         public int? Quantity { get; set; }
 

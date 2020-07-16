@@ -24,7 +24,7 @@ namespace FashionShopAPI.Controllers
 
         // GET: api/ProductPics/5
         [ResponseType(typeof(ProductPic))]
-        public IHttpActionResult GetProductPic(int id)
+        public IHttpActionResult GetProductPic(Guid id)
         {
             ProductPic productPic = db.ProductPics.Find(id);
             if (productPic == null)
@@ -37,7 +37,7 @@ namespace FashionShopAPI.Controllers
 
         // PUT: api/ProductPics/5
         [ResponseType(typeof(void))]
-        public IHttpActionResult PutProductPic(int id, ProductPic productPic)
+        public IHttpActionResult PutProductPic(Guid id, ProductPic productPic)
         {
             if (!ModelState.IsValid)
             {
@@ -87,7 +87,7 @@ namespace FashionShopAPI.Controllers
 
         // DELETE: api/ProductPics/5
         [ResponseType(typeof(ProductPic))]
-        public IHttpActionResult DeleteProductPic(int id)
+        public IHttpActionResult DeleteProductPic(Guid id)
         {
             ProductPic productPic = db.ProductPics.Find(id);
             if (productPic == null)
@@ -110,7 +110,7 @@ namespace FashionShopAPI.Controllers
             base.Dispose(disposing);
         }
 
-        private bool ProductPicExists(int id)
+        private bool ProductPicExists(Guid id)
         {
             return db.ProductPics.Count(e => e.Id == id) > 0;
         }

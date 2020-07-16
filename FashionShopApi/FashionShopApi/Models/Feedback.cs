@@ -9,9 +9,9 @@ namespace FashionShopAPI.Models
     [Table("Feedback")]
     public partial class Feedback
     {
-        public int Id { get; set; }
+        public Guid Id { get; set; }
 
-        public int? AccountID { get; set; }
+        public Guid? AccountID { get; set; }
 
         public string Description { get; set; }
 

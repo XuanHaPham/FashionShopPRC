@@ -7,22 +7,22 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
+using System.Web.Http.Cors;
 using System.Web.Http.Description;
 using FashionShopAPI.DTO;
 using FashionShopAPI.Models;
 
 namespace FashionShopAPI.Controllers
 {
+    [EnableCors(origins: "*", headers: "*", methods: "*", exposedHeaders: "X-Custom-Header")]
     public class ProductsController : ApiController
     {
         private Model1 db = new Model1();
-
-        [Route("api/Products/Remove")]
+        [Route("products/getAllProduct")]
         [HttpGet]
         public List<ProductDTO> GetAllProduct()
         {
-            db.Products.
-            return Ok("Remove success");
+            return db.Products.ToList().Select(x => new ProductDTO(x)).ToList();
         }
 
         // GET: api/Products
@@ -33,7 +33,7 @@ namespace FashionShopAPI.Controllers
 
         // GET: api/Products/5
         [ResponseType(typeof(Product))]
-        public IHttpActionResult GetProduct(int id)
+        public IHttpActionResult GetProduct(Guid id)
         {
             Product product = db.Products.Find(id);
             if (product == null)
@@ -46,7 +46,7 @@ namespace FashionShopAPI.Controllers
 
         // PUT: api/Products/5
         [ResponseType(typeof(void))]
-        public IHttpActionResult PutProduct(int id, Product product)
+        public IHttpActionResult PutProduct(Guid id, Product product)
         {
             if (!ModelState.IsValid)
             {
@@ -96,7 +96,7 @@ namespace FashionShopAPI.Controllers
 
         // DELETE: api/Products/5
         [ResponseType(typeof(Product))]
-        public IHttpActionResult DeleteProduct(int id)
+        public IHttpActionResult DeleteProduct(Guid id)
         {
             Product product = db.Products.Find(id);
             if (product == null)
@@ -119,7 +119,7 @@ namespace FashionShopAPI.Controllers
             base.Dispose(disposing);
         }
 
-        private bool ProductExists(int id)
+        private bool ProductExists(Guid id)
         {
             return db.Products.Count(e => e.Id == id) > 0;
         }

@@ -24,7 +24,7 @@ namespace FashionShopAPI.Controllers
 
         // GET: api/WishLists/5
         [ResponseType(typeof(WishList))]
-        public IHttpActionResult GetWishList(int id)
+        public IHttpActionResult GetWishList(Guid id)
         {
             WishList wishList = db.WishLists.Find(id);
             if (wishList == null)
@@ -37,7 +37,7 @@ namespace FashionShopAPI.Controllers
 
         // PUT: api/WishLists/5
         [ResponseType(typeof(void))]
-        public IHttpActionResult PutWishList(int id, WishList wishList)
+        public IHttpActionResult PutWishList(Guid id, WishList wishList)
         {
             if (!ModelState.IsValid)
             {
@@ -87,7 +87,7 @@ namespace FashionShopAPI.Controllers
 
         // DELETE: api/WishLists/5
         [ResponseType(typeof(WishList))]
-        public IHttpActionResult DeleteWishList(int id)
+        public IHttpActionResult DeleteWishList(Guid id)
         {
             WishList wishList = db.WishLists.Find(id);
             if (wishList == null)
@@ -110,7 +110,7 @@ namespace FashionShopAPI.Controllers
             base.Dispose(disposing);
         }
 
-        private bool WishListExists(int id)
+        private bool WishListExists(Guid id)
         {
             return db.WishLists.Count(e => e.Id == id) > 0;
         }

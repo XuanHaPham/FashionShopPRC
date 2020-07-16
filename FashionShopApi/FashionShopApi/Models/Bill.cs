@@ -15,13 +15,13 @@ namespace FashionShopAPI.Models
             BillDetails = new HashSet<BillDetail>();
         }
 
-        public int Id { get; set; }
+        public Guid Id { get; set; }
 
-        public int? AccountID { get; set; }
+        public Guid? AccountID { get; set; }
 
-        public int? DeliverID { get; set; }
+        public Guid? DeliverID { get; set; }
 
-        public int? PromotionID { get; set; }
+        public Guid? PromotionID { get; set; }
 
         public double? SubTotal { get; set; }
 

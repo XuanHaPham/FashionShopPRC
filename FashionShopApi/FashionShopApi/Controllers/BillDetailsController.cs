@@ -24,7 +24,7 @@ namespace FashionShopAPI.Controllers
 
         // GET: api/BillDetails/5
         [ResponseType(typeof(BillDetail))]
-        public IHttpActionResult GetBillDetail(int id)
+        public IHttpActionResult GetBillDetail(Guid id)
         {
             BillDetail billDetail = db.BillDetails.Find(id);
             if (billDetail == null)
@@ -37,7 +37,7 @@ namespace FashionShopAPI.Controllers
 
         // PUT: api/BillDetails/5
         [ResponseType(typeof(void))]
-        public IHttpActionResult PutBillDetail(int id, BillDetail billDetail)
+        public IHttpActionResult PutBillDetail(Guid id, BillDetail billDetail)
         {
             if (!ModelState.IsValid)
             {
@@ -87,7 +87,7 @@ namespace FashionShopAPI.Controllers
 
         // DELETE: api/BillDetails/5
         [ResponseType(typeof(BillDetail))]
-        public IHttpActionResult DeleteBillDetail(int id)
+        public IHttpActionResult DeleteBillDetail(Guid id)
         {
             BillDetail billDetail = db.BillDetails.Find(id);
             if (billDetail == null)
@@ -110,7 +110,7 @@ namespace FashionShopAPI.Controllers
             base.Dispose(disposing);
         }
 
-        private bool BillDetailExists(int id)
+        private bool BillDetailExists(Guid id)
         {
             return db.BillDetails.Count(e => e.Id == id) > 0;
         }

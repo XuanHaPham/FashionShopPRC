@@ -15,7 +15,7 @@ namespace FashionShopAPI.Models
             Bills = new HashSet<Bill>();
         }
 
-        public int Id { get; set; }
+        public Guid Id { get; set; }
 
         public string CompanyName { get; set; }
 

@@ -9,11 +9,11 @@ namespace FashionShopAPI.Models
     [Table("BillDetail")]
     public partial class BillDetail
     {
-        public int Id { get; set; }
+        public Guid Id { get; set; }
 
-        public int? BillID { get; set; }
+        public Guid? BillID { get; set; }
 
-        public int? ProductID { get; set; }
+        public Guid? ProductID { get; set; }
 
         public int? Quantity { get; set; }
 

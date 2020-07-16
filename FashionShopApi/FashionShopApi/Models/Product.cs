@@ -17,11 +17,11 @@ namespace FashionShopAPI.Models
             WishLists = new HashSet<WishList>();
         }
 
-        public int Id { get; set; }
+        public Guid Id { get; set; }
 
-        public int? CategoryID { get; set; }
+        public Guid? CategoryID { get; set; }
 
-        public int? AccountID { get; set; }
+        public Guid? AccountID { get; set; }
 
         [StringLength(5)]
         public string Size { get; set; }

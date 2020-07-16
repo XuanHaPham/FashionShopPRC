@@ -24,7 +24,7 @@ namespace FashionShopAPI.Controllers
 
         // GET: api/AccountRoles/5
         [ResponseType(typeof(AccountRole))]
-        public IHttpActionResult GetAccountRole(int id)
+        public IHttpActionResult GetAccountRole(Guid id)
         {
             AccountRole accountRole = db.AccountRoles.Find(id);
             if (accountRole == null)
@@ -37,7 +37,7 @@ namespace FashionShopAPI.Controllers
 
         // PUT: api/AccountRoles/5
         [ResponseType(typeof(void))]
-        public IHttpActionResult PutAccountRole(int id, AccountRole accountRole)
+        public IHttpActionResult PutAccountRole(Guid id, AccountRole accountRole)
         {
             if (!ModelState.IsValid)
             {
@@ -87,7 +87,7 @@ namespace FashionShopAPI.Controllers
 
         // DELETE: api/AccountRoles/5
         [ResponseType(typeof(AccountRole))]
-        public IHttpActionResult DeleteAccountRole(int id)
+        public IHttpActionResult DeleteAccountRole(Guid id)
         {
             AccountRole accountRole = db.AccountRoles.Find(id);
             if (accountRole == null)
@@ -110,7 +110,7 @@ namespace FashionShopAPI.Controllers
             base.Dispose(disposing);
         }
 
-        private bool AccountRoleExists(int id)
+        private bool AccountRoleExists(Guid id)
         {
             return db.AccountRoles.Count(e => e.Id == id) > 0;
         }

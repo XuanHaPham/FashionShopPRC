@@ -24,7 +24,7 @@ namespace FashionShopAPI.Controllers
 
         // GET: api/DeliveryChannels/5
         [ResponseType(typeof(DeliveryChannel))]
-        public IHttpActionResult GetDeliveryChannel(int id)
+        public IHttpActionResult GetDeliveryChannel(Guid id)
         {
             DeliveryChannel deliveryChannel = db.DeliveryChannels.Find(id);
             if (deliveryChannel == null)
@@ -37,7 +37,7 @@ namespace FashionShopAPI.Controllers
 
         // PUT: api/DeliveryChannels/5
         [ResponseType(typeof(void))]
-        public IHttpActionResult PutDeliveryChannel(int id, DeliveryChannel deliveryChannel)
+        public IHttpActionResult PutDeliveryChannel(Guid id, DeliveryChannel deliveryChannel)
         {
             if (!ModelState.IsValid)
             {
@@ -87,7 +87,7 @@ namespace FashionShopAPI.Controllers
 
         // DELETE: api/DeliveryChannels/5
         [ResponseType(typeof(DeliveryChannel))]
-        public IHttpActionResult DeleteDeliveryChannel(int id)
+        public IHttpActionResult DeleteDeliveryChannel(Guid id)
         {
             DeliveryChannel deliveryChannel = db.DeliveryChannels.Find(id);
             if (deliveryChannel == null)
@@ -110,7 +110,7 @@ namespace FashionShopAPI.Controllers
             base.Dispose(disposing);
         }
 
-        private bool DeliveryChannelExists(int id)
+        private bool DeliveryChannelExists(Guid id)
         {
             return db.DeliveryChannels.Count(e => e.Id == id) > 0;
         }
