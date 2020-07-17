@@ -190,7 +190,7 @@ export default {
       } else {
         this.highlightPasswordWithError = true;
       }
-    }
+    },
   }
 };
 </script>

@@ -7,11 +7,13 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
+using System.Web.Http.Cors;
 using System.Web.Http.Description;
 using FashionShopAPI.Models;
 
 namespace FashionShopAPI.Controllers
 {
+    [EnableCors(origins: "*", headers: "*", methods: "*")]
     public class AccountsController : ApiController
     {
         private Model1 db = new Model1();
@@ -74,14 +76,21 @@ namespace FashionShopAPI.Controllers
         [ResponseType(typeof(Account))]
         public IHttpActionResult PostAccount(Account account)
         {
-            if (!ModelState.IsValid)
+            var accountToAdd = new Account()
             {
-                return BadRequest(ModelState);
-            }
-
-            db.Accounts.Add(account);
+                Id = Guid.NewGuid(),
+                Email = account.Email,
+                Dob = account.Dob,
+                Fullname = account.Fullname,
+                Password = account.Password,
+                PhoneNumber = account.PhoneNumber,
+                 Username = account.Username,
+                 ShippingAddress = account.ShippingAddress,
+                 Status = true,
+                 Address = account.Address,
+            };
+            db.Accounts.Add(accountToAdd);
             db.SaveChanges();
-
             return CreatedAtRoute("DefaultApi", new { id = account.Id }, account);
         }
 

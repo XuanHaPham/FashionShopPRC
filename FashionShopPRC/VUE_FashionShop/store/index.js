@@ -406,7 +406,7 @@ export function _parseJSON(response) {
 
 
 export const routes = {
-    ACCOUNT: 'accounts',
+    ACCOUNT: 'api/Accounts',
     PASSWORD: 'accounts/updatePassword',
     FEEDBACK: 'feedback',
     GETPRODUCTS: 'products/getAllProduct',

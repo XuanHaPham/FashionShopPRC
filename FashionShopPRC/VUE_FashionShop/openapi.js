@@ -8,7 +8,7 @@ export const methods = {
 }
 
 export const routes = {
-    ACCOUNT: 'Account',
+    ACCOUNT: '/api/Account',
     USERS: 'Account/AccountsInRole?role=User',
     ADMINS: 'Account/AccountsInRole?role=Admin',
     COUNTUSERS: 'Account/CountUsers',

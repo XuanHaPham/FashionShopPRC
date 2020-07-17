@@ -390,7 +390,7 @@ export default {
     //           })
     //        .then(dataJson =>{
     //              dataToRecieved = JSON.parse(dataJson);
-    //          })
+    //          })        
     //           .catch(err =>{
     //             if(err=="server")return
     //             console.log(err);
